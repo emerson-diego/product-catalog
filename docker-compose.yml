@@ -1,0 +1,17 @@
+services:
+  elasticsearch:
+    container_name: 'elasticsearch'
+    image: elasticsearch:6.6.2
+    ports:
+      - 9200:9200
+      - 9300:9300
+    environment:
+      - discovery.type-single-node
+
+  redis:
+    container_name: 'redis'
+    image: redis:3.0.1
+    ports:
+      - 6379:6379
+#docker pull docker.elastic.co/elasticsearch/elasticsearch:7.13.3
+#docker run -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" docker.elastic.co/elasticsearch/elasticsearch:7.13.3
